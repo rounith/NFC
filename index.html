@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login Page</title>
+  <!-- Replace 'path/to/' with the appropriate paths to the locally hosted Bootstrap CSS file -->
+  <link rel="stylesheet" href="/bootstrap-5.3.1-dist/css/bootstrap.min.css">
+</head>
+<body>
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-md-6" id="loginSegment">
+        <form action="/login" method="post" id="loginForm">
+          <h2>Login</h2>
+          <div class="form-group">
+            <label for="empid">Emp Id:</label>
+            <input type="text" class="form-control" id="empid" name="empid" required>
+          </div>
+          <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" class="form-control" id="password" name="password" required>
+          </div>
+          <div class="form-group">
+            <label for="block">Block:</label>
+            <select class="form-control" id="block" name="block">
+              <option value="block A">Block A</option>
+              <option value="block B">Block B</option>
+            </select>
+          </div>
+          <br>
+          <button type="submit" class="btn btn-primary">Login</button>
+        </form>
+      </div>
+      <div class="col-md-6" id="registerSegment" style="display: none;">
+        <form action="/register" method="POST" id="registerForm">
+          <h2 >Register</h2>
+          <div class="form-group">
+            <label for="user">Emp ID:</label>
+            <input type="text" class="form-control" id="user" name="user" required>
+          </div>
+          <div class="form-group">
+            <label for="pass">Password:</label>
+            <input type="password" class="form-control" id="pass" name="pass" required>
+          </div>
+          <div class="form-group">
+            <label for="confirmPass">Confirm Password:</label>
+            <input type="password" class="form-control" id="confirmPass" name="confirmPass" required>
+          </div>
+          <div class="form-group">
+            <label for="block">Block:</label>
+            <select class="form-control" id="block" name="block">
+              <option value="block A">Block A</option>
+              <option value="block B">Block B</option>
+            </select>
+          </div>
+          <br>
+          <button type="submit" class="btn btn-success">Register</button>
+        </form>
+      </div>
+    </div>
+    <div class="row mt-3">
+      <div class="col">
+        <button type="button" class="btn btn-secondary" id="toggleButton" onclick="toggleForms()">Switch to Register</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Replace 'path/to/' with the appropriate paths to the locally hosted Bootstrap JS file -->
+  <script src="/bootstrap-5.3.1-dist/js/bootstrap.min.js"></script>
+  <script>
+    function toggleForms() {
+      const loginSegment = document.getElementById("loginSegment");
+      const registerSegment = document.getElementById("registerSegment");
+      const toggleButton = document.getElementById("toggleButton");
+
+      if (loginSegment.style.display === "none") {
+        loginSegment.style.display = "block";
+        registerSegment.style.display = "none";
+        toggleButton.textContent = "Switch to Register";
+      } else {
+        loginSegment.style.display = "none";
+        registerSegment.style.display = "block";
+        toggleButton.textContent = "Switch to Login";
+      }
+    }
+  </script>
+</body>
+</html>

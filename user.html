@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>RadiationLevels</title>
+  <!-- Replace 'path/to/' with the appropriate paths to the locally hosted Bootstrap CSS file -->
+  <link rel="stylesheet" href="/bootstrap-5.3.1-dist/css/bootstrap.min.css">
+</head>
+
+<body>
+  <div class="container mt-3">
+    <h1>Insert Data into MySQL</h1>
+    <form action="/insert" method="post" onsubmit="setDate()" >
+      <div class="col-md-3" >
+        <label for="emp" class="form-label">ID:</label>
+        <input type="number" class="form-control" id="emp" name="emp" required>
+      </div>
+      <div class="col-md-3">
+        <label for="name" class="form-label">Monitored By:</label>
+        <input type="text" class="form-control" id="name" name="name" required>
+      </div>
+      <div class="col-md-3">
+        <label for="block" class="form-label">Block:</label>
+        <select class="form-control" id="block" name="block">
+          <!-- Options for the block drop-down -->
+        </select>
+      </div>
+      <div class="col-md-3">
+        <label for="plant" class="form-label">Plant:</label>
+        <select class="form-control" id="plant" name="plant">
+          <!-- Options for the plant drop-down -->
+        </select>
+      </div>
+      <div class="col-md-3">
+        <label for="area" class="form-label">Area:</label>
+        <select class="form-control" id="area" name="area">
+          <!-- Options for the area drop-down -->
+        </select>
+      </div>
+      <div class="col-md-3">
+        <label for="areaspec" class="form-label">Area Specification:</label>
+        <select class="form-control" id="areaspec" name="areaspec">
+          <!-- Options for the areaspec drop-down -->
+        </select>
+      </div>
+      <div class="col-md-3">
+        <label for="near" class="form-label">Near:</label>
+        <input type="text" class="form-control" id="near" name="near" required>
+      </div>
+      <div class="col-md-3">
+        <label for="onem" class="form-label">1 M distance:</label>
+        <input type="text" class="form-control" id="onem" name="onem" required>
+      </div>
+      <input type="hidden" class="form-control" id="currentDate" name="currentDate" value="">
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+
+  <!-- Replace 'path/to/' with the appropriate paths to the locally hosted Bootstrap JS file -->
+  <script src="/bootstrap-5.3.1-dist/js/bootstrap.min.js"></script>
+  <script src="/server.js"></script>
+  <script src="/app.js"></script>
+  <script>
+    document.getElementById('retrieveButton').addEventListener('click', retrieveData);
+    document.getElementById('retrievedate').addEventListener('click', retrieveDate);
+  </script>
+</body>
+
+</html>

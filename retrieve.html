@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Retrieve Radiation Levels</title>
+  <!-- Replace 'path/to/' with the appropriate paths to the locally hosted Bootstrap CSS file -->
+  <link rel="stylesheet" href="/bootstrap-5.3.1-dist/css/bootstrap.min.css">
+</head>
+<body>
+  <div class="container mt-5">
+    <h1>Retrieve Data</h1>
+    <button class="btn btn-primary" id="retrieveButton">Retrieve Data</button>
+    <ul id="dataList"></ul>
+    <div class="row">
+      <div class="col-md-3">
+        <p>Month:</p>
+        <select class="form-select mt-2" id="month">
+          <!-- Updated function name to retrieveDate -->
+          <option value="1">January</option>
+          <option value="2">February</option>
+          <option value="3">March</option>
+          <option value="4">April</option>
+          <option value="5">May</option>
+          <option value="6">June</option>
+          <option value="7">July</option>
+          <option value="8">August</option>
+          <option value="9">September</option>
+          <option value="10">October</option>
+          <option value="11">November</option>
+          <option value="12">December</option>
+        </select>
+      </div>
+    </div>
+    <div class="row mt-2">
+      <div class="col-md-3">
+        <p>Block:<p>
+        <select class="form-select" id="block" name="block">
+          <!-- Options for the block drop-down -->
+        </select>
+      </div>
+    </div>
+    <div class="row mt-2">
+      <div class="col-md-3">
+        <p>Plant:</p>
+        <select class="form-select" name="plant" id="plant">
+          <!-- Options for the first drop-down -->
+        </select>
+      </div>
+    </div>
+    <div class="row mt-2">
+      <div class="col-md-3">
+        <p>Area:</p>
+        <select class="form-select" name="area" id="area">
+          <!-- Options for the second drop-down -->
+        </select>
+      </div>
+    </div>
+    
+    <div class="row mt-2">
+      <div class="col-md-3">
+        <button class="btn btn-primary" id="retrievedate">Retrieve</button>
+      </div>
+    </div>
+
+    <div class="row mt-3">
+      <div class="col">
+        <div id="dataDisplay">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Area</th>
+                <th>Area Specification</th>
+                <th>Min Near</th>
+                <th>Max Near</th>
+                <th>Min Onem</th>
+                <th>Max Onem</th>
+              </tr>
+            </thead>
+            <tbody id="dataBody">
+              <!-- Data rows will be added here -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Replace 'path/to/' with the appropriate paths to the locally hosted Bootstrap JS file -->
+  <script src="/bootstrap-5.3.1-dist/js/bootstrap.min.js"></script>
+  <script src="/client.js"></script>
+  <script src="/app.js"></script>
+  <script>
+    document.getElementById("retrieveButton").addEventListener("click", retrieveData);
+    document.getElementById("retrievedate").addEventListener("click", retrieveDate);
+  </script>
+</body>
+</html>
